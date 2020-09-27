@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">GeoQuiz</string>
+    <!--    easy questions-->
+    <string name="easy_q_1">Android Inc. is who developed android ?</string>
+    <string name="easy_q_2">Android is an operating system ?</string>
+    <string name="easy_q_3">abc is Android apps extension ?</string>
+    <string name="easy_q_4">Android can run Apple apps ?</string>
+    <string name="easy_q_5">Kotlin is programming language ?</string>
+    <string name="easy_q_6">Kotlin is easier than java ?</string>
+
+    <!--    normal questions-->
+    <string name="normal_q_1">Android is Linux kernel based ?</string>
+    <string name="normal_q_2">SDK is System Design Kit ?</string>
+    <string name="normal_q_3">Gradle is building tool ?</string>
+    <string name="normal_q_4">New is a keyword in kotlin ?</string>
+    <string name="normal_q_5">MVVM is design pattern ?</string>
+    <string name="normal_q_6">Androidx is new android OS ? </string>
+
+    <!--    hard questions-->
+    <string name="hard_q_1">Room library is from android jetpack ?</string>
+    <string name="hard_q_2">synchronise tasks mean run them all together ?</string>
+    <string name="hard_q_3">onAttach() is method in  Activity lifecycle ?</string>
+    <string name="hard_q_4">Android OS developed with c language ?</string>
+    <string name="hard_q_5">ANR responding time is 5sec ?</string>
+    <string name="hard_q_6">Broadcast receivers work on Main Thread ?</string>
+
+
+    <string name="true_button">true</string>
+    <string name="false_button">false</string>
+    <string name="correct_toast">correct</string>
+    <string name="incorrect_toast">in correct !</string>
+    <string name="warning_text">Are you sure you want to do this?</string>
+    <string name="show_answer_button">Show Answer</string>
+    <string name="cheat_button">Cheat!</string>
+    <string name="judgment_toast">Cheating is wrong.</string>
+    <string name="next_button">next button</string>
+    <string name="previous_button">previous button</string>
+    <string name="reset_button">reset_button</string>
+</resources>
