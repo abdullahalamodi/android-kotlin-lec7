@@ -146,6 +146,9 @@ class MainActivity : AppCompatActivity() {
             setAnswerBtnsState(false);
         } else {
             setAnswerBtnsState(true);
+            questionView.setCompoundDrawablesWithIntrinsicBounds(
+                null, null, null, null
+            );
         }
     }
 
