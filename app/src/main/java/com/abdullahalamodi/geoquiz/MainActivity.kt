@@ -1,6 +1,7 @@
 package com.abdullahalamodi.geoquiz
 
 import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -54,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         cheatBtn.setOnClickListener {
             val answerIsTrue = quizViewModel.question.answer
             val intent = CheatActivity.newIntent(this@MainActivity, answerIsTrue)
-            startActivityForResult(intent, REQUEST_CODE_CHEAT);
+            val options = ActivityOptions.makeClipRevealAnimation(it, 0, 0, it.width, it.height);
+            startActivityForResult(intent, REQUEST_CODE_CHEAT, options.toBundle());
         }
 
         nextBtn.setOnClickListener {
@@ -134,7 +136,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkIfAnswering() {
         if (quizViewModel.question.isAnswered) {
-            if (quizViewModel.question.answer) {
+            if (quizViewModel.question.answer) { //wrong that we depend on real question answer !!
                 questionView.setCompoundDrawablesWithIntrinsicBounds(
                     null, null, getDrawable(R.drawable.true_24), null
                 );

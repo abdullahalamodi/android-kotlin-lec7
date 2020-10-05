@@ -7,6 +7,7 @@ class QuizViewModel : ViewModel() {
 
     var currentIndex = 0;
     var isCheater = false;
+    var cheatsNum = 0;
     var score = 0;
     var level = 1;
     private val numOfQuestions = 5;  //start from 0

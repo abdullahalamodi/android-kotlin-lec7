@@ -3,6 +3,7 @@ package com.abdullahalamodi.geoquiz
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
@@ -16,6 +17,7 @@ const val EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geoquiz.answer_shown"
 
 class CheatActivity : AppCompatActivity() {
     private lateinit var answerTextView: TextView;
+    private lateinit var apiLevelTextView: TextView;
     private lateinit var showAnswerButton: Button;
 
     private val quizViewModel: QuizViewModel by lazy {
@@ -28,12 +30,15 @@ class CheatActivity : AppCompatActivity() {
         setContentView(R.layout.activity_cheat)
         answerIsTrue = intent.getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
         answerTextView = findViewById(R.id.answer_text_view)
+        apiLevelTextView = findViewById(R.id.api_level_text_view)
         showAnswerButton = findViewById(R.id.show_answer_button)
+        apiLevelTextView.text = "Api Level ${Build.VERSION.SDK_INT}";
+        checkCheatsNum();
         showAnswerButton.setOnClickListener {
             quizViewModel.isCheater = true;
             setAnswerShownResult(quizViewModel.isCheater);
+            quizViewModel.cheatsNum++;
         }
-
 
     }
 
@@ -57,5 +62,10 @@ class CheatActivity : AppCompatActivity() {
             putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
         }
         setResult(Activity.RESULT_OK, data);
+    }
+
+    //to check num of cheats and set showAnswerButton case
+    private fun checkCheatsNum(){
+        showAnswerButton.isEnabled = quizViewModel.cheatsNum != 3
     }
 }
